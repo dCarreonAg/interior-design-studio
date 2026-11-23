@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Esta línea hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Studio | Inicio</title>
+  <meta name="description" content="Estudio de diseño de interiores: estilos, productos, diseñadores y proyectos.">
+
+  <!-- Fuentes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO (NAVEGACIÓN) ============ -->
+  <header class="encabezado">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="estilos.html">Estilos</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="disenadores.html">Diseñadores</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a href="productos.html#buscador" aria-label="Buscar productos">
+          <svg class="icono-buscar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </a>
+        <a href="index.html#contacto" class="boton">Contacto</a>
+        <!-- Botón de menú para celular -->
+        <button class="boton-menu" id="boton-menu" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============ HERO (BANNER PRINCIPAL CON CARRUSEL) ============ -->
+    <section class="hero">
+      <!-- Cada div es una imagen del carrusel. JS las va cambiando. -->
+      <div class="hero-slide visible" style="background-image: url('img/hero-1.svg');"></div>
+      <div class="hero-slide" style="background-image: url('img/hero-2.svg');"></div>
+      <div class="hero-slide" style="background-image: url('img/hero-3.svg');"></div>
+
+      <div class="contenedor hero-texto">
+        <h1>Transformamos espacios en experiencias únicas</h1>
+        <p>Diseño interior que inspira, conecta y mejora tu forma de vivir.</p>
+        <a href="proyectos.html" class="boton">Ver Proyectos →</a>
+      </div>
+
+      <!-- Puntitos para cambiar de imagen -->
+      <div class="puntos">
+        <button class="punto activo" aria-label="Imagen 1"></button>
+        <button class="punto" aria-label="Imagen 2"></button>
+        <button class="punto" aria-label="Imagen 3"></button>
+      </div>
+    </section>
+
+
+    <!-- ============ ¿QUIÉNES SOMOS? ============ -->
+    <section class="seccion" id="nosotros">
+      <div class="contenedor">
+        <div class="nosotros">
+          <div>
+            <h2>¿Quiénes somos?</h2>
+            <p>
+              En Interior Design Studio somos un equipo de profesionales apasionados por el
+              diseño de interiores. Creamos espacios personalizados que combinan funcionalidad,
+              estética y bienestar, adaptándonos a las necesidades de cada cliente.
+            </p>
+            <a href="disenadores.html" class="boton">Conocer más →</a>
+          </div>
+
+          <img src="img/nosotros.svg" alt="Sala decorada con mueble de madera y planta">
+
+          <ul class="valores">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M12 21 8 9l4-6 4 6z"/></svg>
+              Experiencia que respalda
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg>
+              Creatividad en cada detalle
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20c0-9 6-15 16-16-1 10-7 16-16 16z"/><path d="M4 20 14 10"/></svg>
+              Espacios que inspiran
+            </li>
+          </ul>
+        </div>
+
+        <!-- Misión, visión y propuesta de valor -->
+        <div class="mision">
+          <div>
+            <h3>Misión</h3>
+            <p>Diseñar espacios funcionales y bellos que reflejen la personalidad de quienes los habitan.</p>
+          </div>
+          <div>
+            <h3>Visión</h3>
+            <p>Ser el estudio de diseño interior de referencia en México por la calidad y calidez de nuestros proyectos.</p>
+          </div>
+          <div>
+            <h3>Propuesta de valor</h3>
+            <p>Acompañamiento cercano de principio a fin, con presupuestos claros y resultados a la medida.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ ESTILOS DESTACADOS ============ -->
+    <section class="seccion seccion-beige">
+      <div class="contenedor">
+        <h2>Estilos destacados</h2>
+        <p class="subtitulo">Explora nuestras principales propuestas de diseño y encuentra el estilo ideal para ti.</p>
+
+        <div class="grilla">
+          <a href="estilos.html#moderno" class="tarjeta">
+            <img src="img/estilo-moderno.svg" alt="Sala de estilo moderno">
+            <div class="tarjeta-cuerpo">
+              <h3>Moderno</h3>
+              <p>Líneas limpias y espacios funcionales.</p>
+            </div>
+          </a>
+          <a href="estilos.html#minimalista" class="tarjeta">
+            <img src="img/estilo-minimalista.svg" alt="Sala de estilo minimalista">
+            <div class="tarjeta-cuerpo">
+              <h3>Minimalista</h3>
+              <p>Simplicidad que genera armonía.</p>
+            </div>
+          </a>
+          <a href="estilos.html#industrial" class="tarjeta">
+            <img src="img/estilo-industrial.svg" alt="Sala de estilo industrial">
+            <div class="tarjeta-cuerpo">
+              <h3>Industrial</h3>
+              <p>Carácter urbano y materiales auténticos.</p>
+            </div>
+          </a>
+          <a href="estilos.html#escandinavo" class="tarjeta">
+            <img src="img/estilo-escandinavo.svg" alt="Sala de estilo escandinavo">
+            <div class="tarjeta-cuerpo">
+              <h3>Escandinavo</h3>
+              <p>Luminosidad y calidez en cada espacio.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="centrado">
+          <a href="estilos.html" class="boton">Explorar todos los estilos →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ PROYECTOS DESTACADOS ============ -->
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="encabezado-seccion">
+          <div>
+            <h2>Proyectos destacados</h2>
+            <p class="subtitulo">Conoce algunos de nuestros proyectos más recientes.</p>
+          </div>
+        </div>
+
+        <div class="grilla">
+          <a href="proyectos.html#apartamento" class="tarjeta tarjeta-proyecto">
+            <img src="img/proyecto-apartamento.svg" alt="Apartamento reformado">
+            <div class="tarjeta-cuerpo">
+              <h3>Apartamento Reforma</h3>
+              <span class="etiqueta">Residencial | Estilo Moderno</span>
+            </div>
+          </a>
+          <a href="proyectos.html#oficina" class="tarjeta tarjeta-proyecto">
+            <img src="img/proyecto-oficina.svg" alt="Oficina corporativa">
+            <div class="tarjeta-cuerpo">
+              <h3>Oficina Corporativa</h3>
+              <span class="etiqueta">Corporativo | Estilo Minimalista</span>
+            </div>
+          </a>
+          <a href="proyectos.html#restaurante" class="tarjeta tarjeta-proyecto">
+            <img src="img/proyecto-restaurante.svg" alt="Restaurante de estilo industrial">
+            <div class="tarjeta-cuerpo">
+              <h3>Restaurante Nórdico</h3>
+              <span class="etiqueta">Restaurantero | Estilo Industrial</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="centrado">
+          <a href="proyectos.html" class="boton">Ver todos los proyectos →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ PRODUCTOS DESTACADOS ============ -->
+    <section class="seccion seccion-beige">
+      <div class="contenedor">
+        <h2>Productos destacados</h2>
+        <p class="subtitulo">Descubre una selección de nuestros productos recomendados.</p>
+
+        <div class="grilla grilla-compacta">
+          <a href="productos.html" class="tarjeta tarjeta-producto">
+            <img src="img/producto-sofa.svg" alt="Sofá Aurora">
+            <div class="tarjeta-cuerpo">
+              <h3>Sofá Aurora</h3>
+              <p class="precio">$12,900</p>
+            </div>
+          </a>
+          <a href="productos.html" class="tarjeta tarjeta-producto">
+            <img src="img/producto-lampara.svg" alt="Lámpara Nordic">
+            <div class="tarjeta-cuerpo">
+              <h3>Lámpara Nordic</h3>
+              <p class="precio">$2,450</p>
+            </div>
+          </a>
+          <a href="productos.html" class="tarjeta tarjeta-producto">
+            <img src="img/producto-mesa.svg" alt="Mesa de Centro Luna">
+            <div class="tarjeta-cuerpo">
+              <h3>Mesa de Centro Luna</h3>
+              <p class="precio">$5,800</p>
+            </div>
+          </a>
+          <a href="productos.html" class="tarjeta tarjeta-producto">
+            <img src="img/producto-silla.svg" alt="Silla Eames">
+            <div class="tarjeta-cuerpo">
+              <h3>Silla Eames</h3>
+              <p class="precio">$3,200</p>
+            </div>
+          </a>
+          <a href="productos.html" class="tarjeta tarjeta-producto">
+            <img src="img/producto-jarron.svg" alt="Jarrón Terra">
+            <div class="tarjeta-cuerpo">
+              <h3>Jarrón Terra</h3>
+              <p class="precio">$950</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="centrado">
+          <a href="productos.html" class="boton">Ver todos los productos →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ NUESTROS DISEÑADORES ============ -->
+    <section class="seccion">
+      <div class="contenedor">
+        <h2>Nuestros diseñadores</h2>
+        <p class="subtitulo">Conoce al equipo detrás de cada proyecto.</p>
+
+        <div class="grilla">
+          <a href="disenadores.html#maria" class="tarjeta tarjeta-disenador">
+            <img src="img/disenadora-maria.svg" alt="María González">
+            <h3>María González</h3>
+            <p>Diseño residencial<br>10 años de experiencia</p>
+          </a>
+          <a href="disenadores.html#carlos" class="tarjeta tarjeta-disenador">
+            <img src="img/disenador-carlos.svg" alt="Carlos Ramírez">
+            <h3>Carlos Ramírez</h3>
+            <p>Espacios corporativos<br>8 años de experiencia</p>
+          </a>
+          <a href="disenadores.html#lucia" class="tarjeta tarjeta-disenador">
+            <img src="img/disenadora-lucia.svg" alt="Lucía Fernández">
+            <h3>Lucía Fernández</h3>
+            <p>Diseño comercial<br>6 años de experiencia</p>
+          </a>
+          <a href="disenadores.html#javier" class="tarjeta tarjeta-disenador">
+            <img src="img/disenador-javier.svg" alt="Javier Torres">
+            <h3>Javier Torres</h3>
+            <p>Dirección creativa<br>12 años de experiencia</p>
+          </a>
+        </div>
+
+        <div class="centrado">
+          <a href="disenadores.html" class="boton">Conocer al equipo →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="seccion seccion-beige" id="contacto">
+      <div class="contenedor contacto">
+        <div>
+          <h2>Contáctanos</h2>
+          <p class="subtitulo">¿Tienes un proyecto en mente? Nos encantaría escucharte.</p>
+          <ul class="datos-contacto">
+            <li>📍 Ciudad de México, México</li>
+            <li>✉️ hola@interiordesignstudio.com</li>
+            <li>📞 +52 55 1234 5678</li>
+          </ul>
+          <div class="redes">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Pinterest">P</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- "novalidate" hace que la validación la haga nuestro JS -->
+        <form class="formulario" id="formulario-contacto" novalidate>
+          <input type="text" id="nombre" placeholder="Nombre">
+          <input type="email" id="correo" placeholder="Correo electrónico">
+          <input type="tel" id="telefono" placeholder="Teléfono" class="completo">
+          <textarea id="mensaje" placeholder="Mensaje" class="completo"></textarea>
+          <button type="submit" class="boton">Enviar consulta →</button>
+          <p class="mensaje-form" id="mensaje-form"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+      <ul class="pie-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estilos.html">Estilos</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="disenadores.html">Diseñadores</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="#">Aviso de privacidad</a></li>
+      </ul>
+      <div class="redes">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">P</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <p class="copy">© <span class="anio">2026</span> Interior Design Studio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- El JavaScript va al final para que el HTML ya esté cargado -->
+  <script src="js/script.js"></script>
+</body>
+</html>

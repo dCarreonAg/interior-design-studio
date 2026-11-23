@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Esta línea hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Studio | Productos</title>
+  <meta name="description" content="Catálogo de muebles, iluminación, decoración, textiles y accesorios.">
+
+  <!-- Fuentes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO (NAVEGACIÓN) ============ -->
+  <header class="encabezado">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="estilos.html">Estilos</a></li>
+          <li><a href="productos.html" class="activo">Productos</a></li>
+          <li><a href="disenadores.html">Diseñadores</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a href="productos.html#buscador" aria-label="Buscar productos">
+          <svg class="icono-buscar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </a>
+        <a href="index.html#contacto" class="boton">Contacto</a>
+        <!-- Botón de menú para celular -->
+        <button class="boton-menu" id="boton-menu" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============ ENCABEZADO DE LA PÁGINA ============ -->
+    <section class="hero-pequeno">
+      <div class="contenedor">
+        <h1>Productos</h1>
+        <p>Muebles, iluminación y accesorios que usamos en nuestros proyectos. Precios de referencia en pesos mexicanos.</p>
+      </div>
+    </section>
+
+
+    <section class="seccion">
+      <div class="contenedor">
+
+        <!-- Buscador: JS revisa el nombre de cada tarjeta mientras escribes -->
+        <input type="search" class="buscador" id="buscador" placeholder="Buscar productos... (ej. sofá, lámpara)">
+
+        <div class="filtros" id="filtros-productos">
+          <button class="filtro activo" data-filtro="todos">Todos</button>
+          <button class="filtro" data-filtro="muebles">Muebles</button>
+          <button class="filtro" data-filtro="iluminacion">Iluminación</button>
+          <button class="filtro" data-filtro="decoracion">Decoración</button>
+          <button class="filtro" data-filtro="textiles">Textiles</button>
+          <button class="filtro" data-filtro="accesorios">Accesorios</button>
+        </div>
+
+        <!-- Para agregar un producto: copia una <article> completa y cambia los datos -->
+        <div class="grilla" id="lista-productos">
+
+          <!-- MUEBLES -->
+          <article class="tarjeta tarjeta-producto" data-categoria="muebles">
+            <img src="img/producto-sofa.svg" alt="Sofá Aurora">
+            <div class="tarjeta-cuerpo">
+              <h3>Sofá Aurora</h3>
+              <p>Sofá de tres plazas, cómodo y de líneas suaves.</p>
+              <ul class="detalle">
+                <li>Materiales: lino y madera de pino</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$12,900</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="muebles">
+            <img src="img/producto-sillon.svg" alt="Sillón Olivo">
+            <div class="tarjeta-cuerpo">
+              <h3>Sillón Olivo</h3>
+              <p>Sillón individual ideal para rincones de lectura.</p>
+              <ul class="detalle">
+                <li>Materiales: terciopelo y nogal</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$7,400</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="muebles">
+            <img src="img/producto-mesa.svg" alt="Mesa de Centro Luna">
+            <div class="tarjeta-cuerpo">
+              <h3>Mesa de Centro Luna</h3>
+              <p>Mesa redonda de cubierta negra mate.</p>
+              <ul class="detalle">
+                <li>Materiales: MDF laqueado y acero</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$5,800</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="muebles">
+            <img src="img/producto-silla.svg" alt="Silla Eames">
+            <div class="tarjeta-cuerpo">
+              <h3>Silla Eames</h3>
+              <p>Silla clásica de comedor con patas de madera.</p>
+              <ul class="detalle">
+                <li>Materiales: polipropileno y haya</li>
+                <li class="agotado">Agotado</li>
+              </ul>
+              <p class="precio">$3,200</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="muebles">
+            <img src="img/producto-librero.svg" alt="Librero Roble">
+            <div class="tarjeta-cuerpo">
+              <h3>Librero Roble</h3>
+              <p>Librero de tres niveles para sala o estudio.</p>
+              <ul class="detalle">
+                <li>Materiales: roble macizo</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$8,900</p>
+            </div>
+          </article>
+
+          <!-- ILUMINACIÓN -->
+          <article class="tarjeta tarjeta-producto" data-categoria="iluminacion">
+            <img src="img/producto-lampara.svg" alt="Lámpara Nordic">
+            <div class="tarjeta-cuerpo">
+              <h3>Lámpara Nordic</h3>
+              <p>Lámpara de mesa con base de ratán.</p>
+              <ul class="detalle">
+                <li>Materiales: ratán y lino</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$2,450</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="iluminacion">
+            <img src="img/producto-colgante.svg" alt="Lámpara colgante Cobre">
+            <div class="tarjeta-cuerpo">
+              <h3>Lámpara colgante Cobre</h3>
+              <p>Lámpara de techo para comedor o barra.</p>
+              <ul class="detalle">
+                <li>Materiales: aluminio color cobre</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$1,890</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="iluminacion">
+            <img src="img/producto-pie.svg" alt="Lámpara de pie Arco">
+            <div class="tarjeta-cuerpo">
+              <h3>Lámpara de pie Arco</h3>
+              <p>Lámpara de piso con pantalla de tela.</p>
+              <ul class="detalle">
+                <li>Materiales: acero negro y algodón</li>
+                <li class="agotado">Agotado</li>
+              </ul>
+              <p class="precio">$3,600</p>
+            </div>
+          </article>
+
+          <!-- DECORACIÓN -->
+          <article class="tarjeta tarjeta-producto" data-categoria="decoracion">
+            <img src="img/producto-jarron.svg" alt="Jarrón Terra">
+            <div class="tarjeta-cuerpo">
+              <h3>Jarrón Terra</h3>
+              <p>Jarrón de cerámica hecho a mano.</p>
+              <ul class="detalle">
+                <li>Materiales: cerámica esmaltada</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$950</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="decoracion">
+            <img src="img/producto-cuadro.svg" alt="Cuadro Atardecer">
+            <div class="tarjeta-cuerpo">
+              <h3>Cuadro Atardecer</h3>
+              <p>Lámina enmarcada de 50 × 70 cm.</p>
+              <ul class="detalle">
+                <li>Materiales: papel de algodón y marco de madera</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$1,350</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="decoracion">
+            <img src="img/producto-espejo.svg" alt="Espejo Oval">
+            <div class="tarjeta-cuerpo">
+              <h3>Espejo Oval</h3>
+              <p>Espejo de pared con marco dorado.</p>
+              <ul class="detalle">
+                <li>Materiales: vidrio y latón</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$2,100</p>
+            </div>
+          </article>
+
+          <!-- TEXTILES -->
+          <article class="tarjeta tarjeta-producto" data-categoria="textiles">
+            <img src="img/producto-cojin.svg" alt="Cojín Arena">
+            <div class="tarjeta-cuerpo">
+              <h3>Cojín Arena</h3>
+              <p>Cojín decorativo de 45 × 45 cm.</p>
+              <ul class="detalle">
+                <li>Materiales: lino lavado</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$480</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="textiles">
+            <img src="img/producto-tapete.svg" alt="Tapete Duna">
+            <div class="tarjeta-cuerpo">
+              <h3>Tapete Duna</h3>
+              <p>Tapete tejido de 160 × 230 cm.</p>
+              <ul class="detalle">
+                <li>Materiales: yute y algodón</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$4,200</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="textiles">
+            <img src="img/producto-cortina.svg" alt="Cortinas Lino">
+            <div class="tarjeta-cuerpo">
+              <h3>Cortinas Lino</h3>
+              <p>Juego de 2 cortinas traslúcidas.</p>
+              <ul class="detalle">
+                <li>Materiales: lino y poliéster</li>
+                <li class="agotado">Agotado</li>
+              </ul>
+              <p class="precio">$1,700</p>
+            </div>
+          </article>
+
+          <!-- ACCESORIOS -->
+          <article class="tarjeta tarjeta-producto" data-categoria="accesorios">
+            <img src="img/producto-reloj.svg" alt="Reloj de pared Mínimo">
+            <div class="tarjeta-cuerpo">
+              <h3>Reloj de pared Mínimo</h3>
+              <p>Reloj silencioso de 40 cm.</p>
+              <ul class="detalle">
+                <li>Materiales: metal y vidrio</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$890</p>
+            </div>
+          </article>
+
+          <article class="tarjeta tarjeta-producto" data-categoria="accesorios">
+            <img src="img/producto-repisa.svg" alt="Repisa flotante">
+            <div class="tarjeta-cuerpo">
+              <h3>Repisa flotante</h3>
+              <p>Juego de 2 repisas de 80 cm.</p>
+              <ul class="detalle">
+                <li>Materiales: madera de parota</li>
+                <li class="disponible">Disponible</li>
+              </ul>
+              <p class="precio">$1,150</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Se muestra solo cuando la búsqueda no encuentra nada -->
+        <p class="sin-resultados oculto" id="sin-resultados">No encontramos productos con esa búsqueda. Prueba con otra palabra.</p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+      <ul class="pie-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estilos.html">Estilos</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="disenadores.html">Diseñadores</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="#">Aviso de privacidad</a></li>
+      </ul>
+      <div class="redes">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">P</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <p class="copy">© <span class="anio">2026</span> Interior Design Studio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- El JavaScript va al final para que el HTML ya esté cargado -->
+  <script src="js/script.js"></script>
+</body>
+</html>

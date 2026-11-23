@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Esta línea hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Studio | Estilos de diseño</title>
+  <meta name="description" content="Conoce los estilos de diseño interior: moderno, minimalista, industrial, escandinavo, clásico y contemporáneo.">
+
+  <!-- Fuentes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO (NAVEGACIÓN) ============ -->
+  <header class="encabezado">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="estilos.html" class="activo">Estilos</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="disenadores.html">Diseñadores</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a href="productos.html#buscador" aria-label="Buscar productos">
+          <svg class="icono-buscar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </a>
+        <a href="index.html#contacto" class="boton">Contacto</a>
+        <!-- Botón de menú para celular -->
+        <button class="boton-menu" id="boton-menu" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============ ENCABEZADO DE LA PÁGINA ============ -->
+    <section class="hero-pequeno">
+      <div class="contenedor">
+        <h1>Estilos de diseño</h1>
+        <p>Conoce las principales tendencias de diseño interior y descubre cuál se adapta mejor a ti y a tu espacio.</p>
+      </div>
+    </section>
+
+
+    <section class="seccion">
+      <div class="contenedor">
+
+        <!-- Botones de categoría: el atributo data-filtro dice qué estilo mostrar -->
+        <div class="filtros" id="filtros-estilos">
+          <button class="filtro activo" data-filtro="todos">Todos</button>
+          <button class="filtro" data-filtro="moderno">Moderno</button>
+          <button class="filtro" data-filtro="minimalista">Minimalista</button>
+          <button class="filtro" data-filtro="industrial">Industrial</button>
+          <button class="filtro" data-filtro="escandinavo">Escandinavo</button>
+          <button class="filtro" data-filtro="clasico">Clásico</button>
+          <button class="filtro" data-filtro="contemporaneo">Contemporáneo</button>
+        </div>
+
+        <!-- Cada <article> es un estilo. data-categoria debe coincidir con data-filtro -->
+        <div id="lista-estilos">
+
+          <article class="estilo" id="moderno" data-categoria="moderno">
+            <img src="img/estilo-moderno.svg" alt="Sala de estilo moderno">
+            <div>
+              <h2>Moderno</h2>
+              <p>Nace a mediados del siglo XX y apuesta por líneas rectas, superficies lisas y una paleta neutra con acentos de color. Todo tiene una función y nada sobra.</p>
+              <h4>Características</h4>
+              <ul>
+                <li>Colores neutros: blanco, gris, negro y madera.</li>
+                <li>Muebles de líneas limpias y patas delgadas.</li>
+                <li>Materiales como vidrio, metal y madera lisa.</li>
+              </ul>
+              <h4>Recomendado para</h4>
+              <ul>
+                <li>Salas y comedores de departamentos urbanos.</li>
+                <li>Espacios abiertos con buena luz natural.</li>
+              </ul>
+              <div class="mini-galeria">
+                <img src="img/proyecto-apartamento.svg" alt="Ejemplo de estilo moderno">
+                <img src="img/hero-2.svg" alt="Ejemplo de estilo moderno">
+              </div>
+            </div>
+          </article>
+
+          <article class="estilo" id="minimalista" data-categoria="minimalista">
+            <img src="img/estilo-minimalista.svg" alt="Sala de estilo minimalista">
+            <div>
+              <h2>Minimalista</h2>
+              <p>"Menos es más". Pocos objetos, bien elegidos, y mucho espacio libre. Crea ambientes tranquilos y fáciles de mantener ordenados.</p>
+              <h4>Características</h4>
+              <ul>
+                <li>Paleta muy clara y monocromática.</li>
+                <li>Almacenamiento oculto, superficies despejadas.</li>
+                <li>Pocos accesorios, cada uno con intención.</li>
+              </ul>
+              <h4>Recomendado para</h4>
+              <ul>
+                <li>Recámaras y espacios de descanso.</li>
+                <li>Departamentos pequeños que necesitan sentirse amplios.</li>
+              </ul>
+              <div class="mini-galeria">
+                <img src="img/proyecto-oficina.svg" alt="Ejemplo de estilo minimalista">
+                <img src="img/nosotros.svg" alt="Ejemplo de estilo minimalista">
+              </div>
+            </div>
+          </article>
+
+          <article class="estilo" id="industrial" data-categoria="industrial">
+            <img src="img/estilo-industrial.svg" alt="Sala de estilo industrial">
+            <div>
+              <h2>Industrial</h2>
+              <p>Inspirado en fábricas y bodegas antiguas. Deja a la vista ladrillo, concreto, tuberías y metal, combinados con madera y cuero.</p>
+              <h4>Características</h4>
+              <ul>
+                <li>Ladrillo aparente y concreto pulido.</li>
+                <li>Lámparas de metal y focos vintage.</li>
+                <li>Tonos oscuros: negro, gris, café.</li>
+              </ul>
+              <h4>Recomendado para</h4>
+              <ul>
+                <li>Lofts y espacios con techos altos.</li>
+                <li>Restaurantes, cafeterías y bares.</li>
+              </ul>
+              <div class="mini-galeria">
+                <img src="img/proyecto-restaurante.svg" alt="Ejemplo de estilo industrial">
+                <img src="img/hero-3.svg" alt="Ejemplo de estilo industrial">
+              </div>
+            </div>
+          </article>
+
+          <article class="estilo" id="escandinavo" data-categoria="escandinavo">
+            <img src="img/estilo-escandinavo.svg" alt="Sala de estilo escandinavo">
+            <div>
+              <h2>Escandinavo</h2>
+              <p>Viene de los países nórdicos, donde hay poca luz en invierno. Busca espacios luminosos, cálidos y acogedores, con mucha madera clara y textiles suaves.</p>
+              <h4>Características</h4>
+              <ul>
+                <li>Blancos, beiges y maderas claras.</li>
+                <li>Textiles: mantas, tapetes y cojines.</li>
+                <li>Plantas y elementos naturales.</li>
+              </ul>
+              <h4>Recomendado para</h4>
+              <ul>
+                <li>Salas familiares y recámaras.</li>
+                <li>Espacios con poca luz natural.</li>
+              </ul>
+              <div class="mini-galeria">
+                <img src="img/proyecto-casa.svg" alt="Ejemplo de estilo escandinavo">
+                <img src="img/hero-1.svg" alt="Ejemplo de estilo escandinavo">
+              </div>
+            </div>
+          </article>
+
+          <article class="estilo" id="clasico" data-categoria="clasico">
+            <img src="img/estilo-clasico.svg" alt="Sala de estilo clásico">
+            <div>
+              <h2>Clásico</h2>
+              <p>Elegante y atemporal. Se basa en la simetría, molduras, maderas oscuras y telas nobles como el terciopelo.</p>
+              <h4>Características</h4>
+              <ul>
+                <li>Muebles tallados y detalles dorados.</li>
+                <li>Colores profundos: vino, verde, azul marino.</li>
+                <li>Candelabros y espejos con marco.</li>
+              </ul>
+              <h4>Recomendado para</h4>
+              <ul>
+                <li>Comedores formales y estudios.</li>
+                <li>Casas amplias con techos altos.</li>
+              </ul>
+              <div class="mini-galeria">
+                <img src="img/proyecto-boutique.svg" alt="Ejemplo de estilo clásico">
+              </div>
+            </div>
+          </article>
+
+          <article class="estilo" id="contemporaneo" data-categoria="contemporaneo">
+            <img src="img/estilo-contemporaneo.svg" alt="Sala de estilo contemporáneo">
+            <div>
+              <h2>Contemporáneo</h2>
+              <p>Es el estilo "del momento": cambia con las tendencias. Mezcla lo moderno con curvas suaves, texturas y colores tierra.</p>
+              <h4>Características</h4>
+              <ul>
+                <li>Formas curvas y muebles orgánicos.</li>
+                <li>Mezcla de texturas: lino, bouclé, piedra.</li>
+                <li>Colores tierra y neutros cálidos.</li>
+              </ul>
+              <h4>Recomendado para</h4>
+              <ul>
+                <li>Cualquier espacio que quieras actualizar.</li>
+                <li>Oficinas y espacios de coworking.</li>
+              </ul>
+              <div class="mini-galeria">
+                <img src="img/proyecto-coworking.svg" alt="Ejemplo de estilo contemporáneo">
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+      <ul class="pie-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estilos.html">Estilos</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="disenadores.html">Diseñadores</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="#">Aviso de privacidad</a></li>
+      </ul>
+      <div class="redes">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">P</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <p class="copy">© <span class="anio">2026</span> Interior Design Studio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- El JavaScript va al final para que el HTML ya esté cargado -->
+  <script src="js/script.js"></script>
+</body>
+</html>

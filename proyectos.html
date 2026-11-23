@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Esta línea hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Studio | Proyectos</title>
+  <meta name="description" content="Portafolio de proyectos de diseño interior residenciales, comerciales, corporativos y restauranteros.">
+
+  <!-- Fuentes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO (NAVEGACIÓN) ============ -->
+  <header class="encabezado">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="estilos.html">Estilos</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="disenadores.html">Diseñadores</a></li>
+          <li><a href="proyectos.html" class="activo">Proyectos</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a href="productos.html#buscador" aria-label="Buscar productos">
+          <svg class="icono-buscar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </a>
+        <a href="index.html#contacto" class="boton">Contacto</a>
+        <!-- Botón de menú para celular -->
+        <button class="boton-menu" id="boton-menu" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============ ENCABEZADO DE LA PÁGINA ============ -->
+    <section class="hero-pequeno">
+      <div class="contenedor">
+        <h1>Proyectos realizados</h1>
+        <p>Algunos de los espacios que hemos transformado. Mueve el control de cada imagen para ver el antes y el después.</p>
+      </div>
+    </section>
+
+
+    <section class="seccion">
+      <div class="contenedor">
+
+        <div class="filtros" id="filtros-proyectos">
+          <button class="filtro activo" data-filtro="todos">Todos</button>
+          <button class="filtro" data-filtro="residencial">Residencial</button>
+          <button class="filtro" data-filtro="comercial">Comercial</button>
+          <button class="filtro" data-filtro="corporativo">Corporativo</button>
+          <button class="filtro" data-filtro="restaurantero">Restaurantero</button>
+        </div>
+
+        <div id="lista-proyectos">
+
+          <article class="proyecto" id="apartamento" data-categoria="residencial">
+            <!-- Comparador antes/después: dos imágenes encimadas + un control deslizante -->
+            <div class="comparador">
+              <img src="img/proyecto-apartamento-antes.svg" alt="Apartamento antes de la remodelación">
+              <img src="img/proyecto-apartamento.svg" alt="Apartamento después de la remodelación" class="despues">
+              <span class="rotulo rotulo-antes">Antes</span>
+              <span class="rotulo rotulo-despues">Después</span>
+              <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+            </div>
+            <div>
+              <span class="etiqueta">Residencial · Estilo Moderno</span>
+              <h2>Apartamento Reforma</h2>
+              <p>Departamento de 95 m² en Paseo de la Reforma que tenía espacios oscuros y divididos.</p>
+              <h4>Objetivo</h4>
+              <p>Abrir la sala y el comedor para ganar luz y amplitud.</p>
+              <h4>Solución</h4>
+              <p>Quitamos un muro, unificamos el piso y elegimos muebles bajos en tonos neutros.</p>
+              <h4>Materiales</h4>
+              <p>Piso de madera de encino, muros en pintura mate, acero negro.</p>
+              <blockquote class="testimonio">
+                "Ahora parece otro departamento. Nos encanta pasar tiempo en la sala."
+                <span>— Familia Herrera</span>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="proyecto" id="casa" data-categoria="residencial">
+            <div class="comparador">
+              <img src="img/proyecto-casa-antes.svg" alt="Casa antes de la remodelación">
+              <img src="img/proyecto-casa.svg" alt="Casa después de la remodelación" class="despues">
+              <span class="rotulo rotulo-antes">Antes</span>
+              <span class="rotulo rotulo-despues">Después</span>
+              <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+            </div>
+            <div>
+              <span class="etiqueta">Residencial · Estilo Escandinavo</span>
+              <h2>Casa Coyoacán</h2>
+              <p>Casa familiar de los años 70 que necesitaba una actualización completa.</p>
+              <h4>Objetivo</h4>
+              <p>Crear una sala cálida para una familia con dos niños pequeños.</p>
+              <h4>Solución</h4>
+              <p>Maderas claras, textiles lavables y muchas plantas para dar vida al espacio.</p>
+              <h4>Materiales</h4>
+              <p>Pino, lino, yute y cerámica artesanal.</p>
+              <blockquote class="testimonio">
+                "María entendió exactamente lo que queríamos desde la primera reunión."
+                <span>— Andrea y Luis</span>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="proyecto" id="boutique" data-categoria="comercial">
+            <div class="comparador">
+              <img src="img/proyecto-boutique-antes.svg" alt="Boutique antes de la remodelación">
+              <img src="img/proyecto-boutique.svg" alt="Boutique después de la remodelación" class="despues">
+              <span class="rotulo rotulo-antes">Antes</span>
+              <span class="rotulo rotulo-despues">Después</span>
+              <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+            </div>
+            <div>
+              <span class="etiqueta">Comercial · Estilo Clásico</span>
+              <h2>Boutique Rosa</h2>
+              <p>Tienda de ropa en Polanco que quería verse más elegante.</p>
+              <h4>Objetivo</h4>
+              <p>Reflejar la identidad de la marca y aumentar el tiempo de visita de los clientes.</p>
+              <h4>Solución</h4>
+              <p>Paleta rosa empolvado, espejos con marco dorado y un área de descanso.</p>
+              <h4>Materiales</h4>
+              <p>Terciopelo, latón y molduras de yeso.</p>
+              <blockquote class="testimonio">
+                "Las clientas ahora se toman fotos en la tienda. ¡Es publicidad gratis!"
+                <span>— Sofía M., dueña</span>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="proyecto" id="oficina" data-categoria="corporativo">
+            <div class="comparador">
+              <img src="img/proyecto-oficina-antes.svg" alt="Oficina antes de la remodelación">
+              <img src="img/proyecto-oficina.svg" alt="Oficina después de la remodelación" class="despues">
+              <span class="rotulo rotulo-antes">Antes</span>
+              <span class="rotulo rotulo-despues">Después</span>
+              <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+            </div>
+            <div>
+              <span class="etiqueta">Corporativo · Estilo Minimalista</span>
+              <h2>Oficina Corporativa</h2>
+              <p>Oficinas de una empresa de tecnología con 40 colaboradores.</p>
+              <h4>Objetivo</h4>
+              <p>Tener salas de juntas, zonas de concentración y áreas comunes.</p>
+              <h4>Solución</h4>
+              <p>Distribución abierta con mamparas de vidrio y una gran mesa de madera.</p>
+              <h4>Materiales</h4>
+              <p>Vidrio templado, madera de nogal y paneles acústicos.</p>
+              <blockquote class="testimonio">
+                "El equipo está más contento y las juntas son más productivas."
+                <span>— Director de Operaciones</span>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="proyecto" id="coworking" data-categoria="corporativo">
+            <div class="comparador">
+              <img src="img/proyecto-coworking-antes.svg" alt="Coworking antes de la remodelación">
+              <img src="img/proyecto-coworking.svg" alt="Coworking después de la remodelación" class="despues">
+              <span class="rotulo rotulo-antes">Antes</span>
+              <span class="rotulo rotulo-despues">Después</span>
+              <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+            </div>
+            <div>
+              <span class="etiqueta">Corporativo · Estilo Contemporáneo</span>
+              <h2>Coworking Roma</h2>
+              <p>Antigua casona convertida en espacio de trabajo compartido.</p>
+              <h4>Objetivo</h4>
+              <p>Respetar la arquitectura original y hacerla funcional para el trabajo.</p>
+              <h4>Solución</h4>
+              <p>Muebles modulares, mucha vegetación y cabinas para llamadas.</p>
+              <h4>Materiales</h4>
+              <p>Madera reciclada, bouclé y concreto pulido.</p>
+              <blockquote class="testimonio">
+                "Nuestros miembros dicen que es el coworking más bonito de la ciudad."
+                <span>— Coworking Roma</span>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="proyecto" id="restaurante" data-categoria="restaurantero">
+            <div class="comparador">
+              <img src="img/proyecto-restaurante-antes.svg" alt="Restaurante antes de la remodelación">
+              <img src="img/proyecto-restaurante.svg" alt="Restaurante después de la remodelación" class="despues">
+              <span class="rotulo rotulo-antes">Antes</span>
+              <span class="rotulo rotulo-despues">Después</span>
+              <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
+            </div>
+            <div>
+              <span class="etiqueta">Restaurantero · Estilo Industrial</span>
+              <h2>Restaurante Nórdico</h2>
+              <p>Restaurante de 80 comensales en la colonia Condesa.</p>
+              <h4>Objetivo</h4>
+              <p>Crear un ambiente acogedor para cenas, sin perder el carácter urbano.</p>
+              <h4>Solución</h4>
+              <p>Ladrillo aparente, lámparas colgantes y mesas de madera maciza.</p>
+              <h4>Materiales</h4>
+              <p>Ladrillo recuperado, hierro, cuero y parota.</p>
+              <blockquote class="testimonio">
+                "Las reservaciones aumentaron desde la reapertura."
+                <span>— Chef Daniel R.</span>
+              </blockquote>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+      <ul class="pie-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estilos.html">Estilos</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="disenadores.html">Diseñadores</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="#">Aviso de privacidad</a></li>
+      </ul>
+      <div class="redes">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">P</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <p class="copy">© <span class="anio">2026</span> Interior Design Studio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- El JavaScript va al final para que el HTML ya esté cargado -->
+  <script src="js/script.js"></script>
+</body>
+</html>

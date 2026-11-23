@@ -1,0 +1,949 @@
+/* =========================================================
+   INTERIOR DESIGN STUDIO - Hoja de estilos
+   Un solo archivo CSS para las 5 páginas.
+   Índice:
+     1. Variables (colores y fuentes)
+     2. Estilos generales
+     3. Botones
+     4. Encabezado y menú
+     5. Hero (banner principal con carrusel)
+     6. Secciones de la página de inicio
+     7. Tarjetas (estilos, proyectos, productos, diseñadores)
+     8. Formulario de contacto
+     9. Pie de página
+    10. Páginas internas (filtros, buscador, perfiles, etc.)
+    11. Responsivo (celulares y tablets)
+   ========================================================= */
+
+
+/* ---------- 1. VARIABLES ----------
+   Si cambias un color aquí, cambia en TODA la página. */
+:root {
+  --verde: #3f4a3c;          /* color principal (botones, footer) */
+  --verde-oscuro: #2c3529;
+  --beige: #ece7df;          /* fondo de secciones alternas */
+  --crema: #f7f5f1;          /* fondo general */
+  --blanco: #ffffff;
+  --texto: #2b2b2b;
+  --texto-suave: #6b6b6b;
+  --borde: #e2ddd4;
+
+  --fuente-titulos: "Libre Baskerville", Georgia, serif;
+  --fuente-texto: "DM Sans", Arial, sans-serif;
+
+  --ancho-max: 1200px;       /* ancho máximo del contenido */
+  --radio: 8px;              /* esquinas redondeadas */
+  --sombra: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ---------- 2. ESTILOS GENERALES ---------- */
+* {
+  box-sizing: border-box;    /* el padding no agranda las cajas */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;   /* desplazamiento suave al usar enlaces #ancla */
+}
+
+body {
+  font-family: var(--fuente-texto);
+  color: var(--texto);
+  background-color: var(--crema);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulos);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Caja centrada que se usa dentro de cada sección */
+.contenedor {
+  width: 90%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+}
+
+.seccion {
+  padding: 70px 0;
+}
+
+.seccion-beige {
+  background-color: var(--beige);
+}
+
+.subtitulo {
+  color: var(--texto-suave);
+  margin: 6px 0 28px;
+}
+
+/* Fila con título a la izquierda y botón a la derecha */
+.encabezado-seccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.centrado {
+  text-align: center;
+  margin-top: 32px;
+}
+
+
+/* ---------- 3. BOTONES ---------- */
+.boton {
+  display: inline-block;
+  background-color: var(--verde);
+  color: var(--blanco);
+  padding: 11px 24px;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton:hover {
+  background-color: var(--verde-oscuro);
+}
+
+.boton-claro {
+  background-color: transparent;
+  color: var(--verde);
+  border: 1px solid var(--verde);
+}
+
+.boton-claro:hover {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+
+/* ---------- 4. ENCABEZADO Y MENÚ ---------- */
+.encabezado {
+  background-color: var(--crema);
+  border-bottom: 1px solid var(--borde);
+  position: sticky;          /* se queda arriba al hacer scroll */
+  top: 0;
+  z-index: 100;
+}
+
+.encabezado .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+/* Logo "ID INTERIOR DESIGN STUDIO" */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-letras {
+  font-family: var(--fuente-titulos);
+  font-size: 2rem;
+  letter-spacing: -2px;
+}
+
+.logo-nombre {
+  font-family: var(--fuente-titulos);
+  font-size: 1rem;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.logo-nombre small {
+  display: block;
+  font-family: var(--fuente-texto);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.menu a {
+  font-size: 0.95rem;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.menu a:hover,
+.menu a.activo {               /* "activo" marca la página actual */
+  border-bottom-color: var(--verde);
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icono-buscar {
+  width: 22px;
+  height: 22px;
+}
+
+/* Botón de hamburguesa: solo se ve en celular (ver sección 11) */
+.boton-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--texto);
+}
+
+
+/* ---------- 5. HERO (banner principal) ---------- */
+.hero {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  color: var(--blanco);
+}
+
+/* Cada imagen del carrusel ocupa todo el hero, una encima de otra */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;                    /* invisibles por defecto */
+  transition: opacity 1s;
+}
+
+.hero-slide.visible {            /* JS pone esta clase a la imagen actual */
+  opacity: 1;
+}
+
+/* Capa oscura para que el texto se lea bien */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
+}
+
+.hero-texto {
+  position: relative;
+  z-index: 2;                    /* encima de la capa oscura */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-texto h1,
+.hero-texto p {
+  max-width: 520px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+}
+
+.hero .boton {
+  align-self: flex-start;
+}
+
+.puntos {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.punto.activo {
+  background-color: var(--blanco);
+}
+
+/* Encabezado más pequeño para las páginas internas */
+.hero-pequeno {
+  background-color: var(--verde);
+  color: var(--blanco);
+  padding: 60px 0;
+}
+
+.hero-pequeno h1 {
+  font-size: 2.6rem;
+}
+
+.hero-pequeno p {
+  opacity: 0.85;
+  max-width: 640px;
+  margin-top: 10px;
+}
+
+
+/* ---------- 6. SECCIONES DE INICIO ---------- */
+
+/* ¿Quiénes somos? -> 3 columnas: texto, imagen, valores */
+.nosotros {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.nosotros p {
+  color: var(--texto-suave);
+  margin: 16px 0 24px;
+}
+
+.nosotros img {
+  border-radius: var(--radio);
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.valores {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.valores li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--fuente-titulos);
+  font-size: 0.95rem;
+}
+
+.valores svg {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+/* Misión / Visión / Propuesta de valor */
+.mision {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.mision div {
+  background-color: var(--blanco);
+  padding: 24px;
+  border-radius: var(--radio);
+  border-top: 3px solid var(--verde);
+}
+
+.mision h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.mision p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+
+/* ---------- 7. TARJETAS ----------
+   "grilla" acomoda tarjetas en columnas automáticamente */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.tarjeta {
+  background-color: var(--blanco);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);   /* se levanta un poquito */
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.tarjeta-cuerpo {
+  padding: 16px 18px 20px;
+}
+
+.tarjeta h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.tarjeta p {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.etiqueta {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+/* Grilla más compacta (5 productos en una fila en Inicio) */
+.grilla-compacta {
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+/* Tarjetas de proyectos un poco más altas */
+.tarjeta-proyecto img {
+  height: 210px;
+}
+
+/* Tarjetas de producto: imagen cuadrada y precio */
+.tarjeta-producto img {
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.precio {
+  font-weight: 600;
+  color: var(--texto) !important;
+  margin-top: 4px;
+}
+
+/* Tarjetas de diseñador: foto redonda centrada */
+.tarjeta-disenador {
+  text-align: center;
+  padding: 26px 16px;
+}
+
+.tarjeta-disenador img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+}
+
+.tarjeta-disenador h3 {
+  font-size: 1rem;
+}
+
+.tarjeta-disenador p {
+  font-size: 0.82rem;
+}
+
+
+/* ---------- 8. FORMULARIO DE CONTACTO ---------- */
+.contacto {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 50px;
+}
+
+.datos-contacto {
+  list-style: none;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.redes {
+  display: flex;
+  gap: 14px;
+}
+
+.redes a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.redes a:hover {
+  background-color: var(--verde);
+  color: var(--blanco);
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.formulario .completo {          /* campos que ocupan las 2 columnas */
+  grid-column: 1 / -1;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-family: var(--fuente-texto);
+  font-size: 0.95rem;
+  background-color: var(--blanco);
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: 2px solid var(--verde);
+}
+
+.formulario textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formulario .boton {
+  justify-self: start;
+}
+
+.error {
+  border-color: #b3261e !important;
+}
+
+.mensaje-form {
+  grid-column: 1 / -1;
+  font-size: 0.92rem;
+}
+
+.mensaje-form.exito {
+  color: var(--verde);
+}
+
+.mensaje-form.fallo {
+  color: #b3261e;
+}
+
+
+/* ---------- 9. PIE DE PÁGINA ---------- */
+.pie {
+  background-color: var(--verde);
+  color: var(--blanco);
+  padding: 30px 0 20px;
+}
+
+.pie .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pie-menu {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.pie-menu a:hover {
+  text-decoration: underline;
+}
+
+.copy {
+  text-align: center;
+  font-size: 0.78rem;
+  opacity: 0.75;
+  margin-top: 20px;
+}
+
+
+/* ---------- 10. PÁGINAS INTERNAS ---------- */
+
+/* Botones de filtro (categorías) */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filtro {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--fuente-texto);
+  font-size: 0.9rem;
+}
+
+.filtro.activo {
+  background-color: var(--verde);
+  color: var(--blanco);
+  border-color: var(--verde);
+}
+
+/* Las tarjetas que no coinciden con el filtro se ocultan */
+.oculto {
+  display: none !important;
+}
+
+/* Buscador de productos */
+.buscador {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 16px;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--fuente-texto);
+  margin-bottom: 18px;
+}
+
+.sin-resultados {
+  color: var(--texto-suave);
+  padding: 30px 0;
+}
+
+/* Detalle de producto (materiales, disponibilidad) */
+.detalle {
+  list-style: none;
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+  margin-top: 8px;
+}
+
+.disponible {
+  color: var(--verde);
+  font-weight: 600;
+}
+
+.agotado {
+  color: #b3261e;
+  font-weight: 600;
+}
+
+/* Estilos de diseño: bloque grande con galería */
+.estilo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.estilo:last-child {
+  border-bottom: none;
+}
+
+.estilo > img {
+  border-radius: var(--radio);
+  width: 100%;
+}
+
+.estilo h2 {
+  margin-bottom: 12px;
+}
+
+.estilo p {
+  color: var(--texto-suave);
+  margin-bottom: 14px;
+}
+
+.estilo h4 {
+  font-size: 0.95rem;
+  margin: 14px 0 6px;
+}
+
+.estilo ul {
+  padding-left: 20px;
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+.mini-galeria {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mini-galeria img {
+  width: 90px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Perfil de diseñador */
+.perfil {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 40px;
+  background-color: var(--blanco);
+  border-radius: var(--radio);
+  padding: 36px;
+  box-shadow: var(--sombra);
+  margin-bottom: 30px;
+}
+
+.perfil-foto img {
+  border-radius: 50%;
+  width: 200px;
+  margin: 0 auto 16px;
+}
+
+.perfil-foto {
+  text-align: center;
+}
+
+.perfil h2 {
+  font-size: 1.7rem;
+}
+
+.perfil .cargo {
+  color: var(--texto-suave);
+  margin-bottom: 14px;
+}
+
+.perfil h4 {
+  font-size: 0.95rem;
+  margin: 18px 0 6px;
+}
+
+.perfil ul {
+  padding-left: 20px;
+  font-size: 0.92rem;
+  color: var(--texto-suave);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0 !important;
+}
+
+.chips li {
+  background-color: var(--beige);
+  color: var(--texto);
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 0.82rem;
+}
+
+.perfil .redes {
+  justify-content: center;
+}
+
+/* Proyectos: antes y después */
+.proyecto {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.proyecto h2 {
+  font-size: 1.7rem;
+}
+
+.proyecto h4 {
+  font-size: 0.95rem;
+  margin: 14px 0 4px;
+}
+
+.proyecto p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+/* Comparador: la imagen "después" se recorta con el control deslizante */
+.comparador {
+  position: relative;
+  border-radius: var(--radio);
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+}
+
+.comparador img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comparador .despues {
+  clip-path: inset(0 0 0 50%);   /* JS cambia el 50% */
+}
+
+.comparador input {
+  position: absolute;
+  bottom: 12px;
+  left: 5%;
+  width: 90%;
+  z-index: 2;
+  accent-color: var(--verde);
+}
+
+.comparador .rotulo {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: var(--blanco);
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.rotulo-antes   { left: 10px; }
+.rotulo-despues { right: 10px; }
+
+.testimonio {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background-color: var(--beige);
+  border-left: 3px solid var(--verde);
+  border-radius: 6px;
+  font-style: italic;
+}
+
+.testimonio span {
+  display: block;
+  font-style: normal;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+
+/* ---------- 11. RESPONSIVO ----------
+   Estas reglas solo se aplican en pantallas pequeñas. */
+
+/* Tablets */
+@media (max-width: 960px) {
+  .nosotros {
+    grid-template-columns: 1fr 1fr;
+  }
+  .valores {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .estilo,
+  .proyecto,
+  .contacto {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celulares */
+@media (max-width: 760px) {
+  .boton-menu {
+    display: block;
+  }
+
+  /* El menú se esconde y aparece al tocar la hamburguesa */
+  .menu {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--crema);
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .menu.abierto {
+    display: flex;
+  }
+
+  .menu a {
+    display: block;
+    padding: 14px 5%;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .acciones .boton {
+    display: none;
+  }
+
+  .hero {
+    height: 480px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .nosotros,
+  .mision,
+  .formulario,
+  .perfil {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion {
+    padding: 50px 0;
+  }
+
+  .pie .contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+}

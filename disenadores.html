@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Esta línea hace que la página se vea bien en celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Studio | Diseñadores</title>
+  <meta name="description" content="Conoce al equipo de diseñadores de Interior Design Studio.">
+
+  <!-- Fuentes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <!-- Nuestra hoja de estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO (NAVEGACIÓN) ============ -->
+  <header class="encabezado">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="estilos.html">Estilos</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="disenadores.html" class="activo">Diseñadores</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+        </ul>
+      </nav>
+
+      <div class="acciones">
+        <a href="productos.html#buscador" aria-label="Buscar productos">
+          <svg class="icono-buscar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </a>
+        <a href="index.html#contacto" class="boton">Contacto</a>
+        <!-- Botón de menú para celular -->
+        <button class="boton-menu" id="boton-menu" aria-label="Abrir menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============ ENCABEZADO DE LA PÁGINA ============ -->
+    <section class="hero-pequeno">
+      <div class="contenedor">
+        <h1>Nuestros diseñadores</h1>
+        <p>Un equipo de profesionales con experiencia en espacios residenciales, comerciales y corporativos.</p>
+      </div>
+    </section>
+
+
+    <section class="seccion">
+      <div class="contenedor">
+
+        <!-- Cada .perfil es un diseñador. Para agregar otro, copia uno completo. -->
+
+        <article class="perfil" id="maria">
+          <div class="perfil-foto">
+            <img src="img/disenadora-maria.svg" alt="Foto de María González">
+            <div class="redes">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="mailto:maria@interiordesignstudio.com" aria-label="Correo">✉</a>
+            </div>
+          </div>
+          <div>
+            <h2>María González</h2>
+            <p class="cargo">Diseñadora residencial · 10 años de experiencia</p>
+            <p>María se enamoró del diseño remodelando la casa de sus abuelos. Desde entonces ha transformado más de 120 hogares, buscando siempre que cada espacio cuente la historia de quien lo habita.</p>
+            <h4>Especialidades</h4>
+            <ul class="chips">
+              <li>Casas y departamentos</li>
+              <li>Cocinas</li>
+              <li>Estilo escandinavo</li>
+            </ul>
+            <h4>Estudios y certificaciones</h4>
+            <ul>
+              <li>Licenciatura en Diseño de Interiores, Universidad Iberoamericana</li>
+              <li>Certificación en Iluminación Residencial</li>
+            </ul>
+            <h4>Portafolio y reconocimientos</h4>
+            <ul>
+              <li>Proyecto destacado: <a href="proyectos.html#casa">Casa Coyoacán</a></li>
+              <li>Mención honorífica, Premio Nacional de Interiorismo 2023</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="perfil" id="carlos">
+          <div class="perfil-foto">
+            <img src="img/disenador-carlos.svg" alt="Foto de Carlos Ramírez">
+            <div class="redes">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="mailto:carlos@interiordesignstudio.com" aria-label="Correo">✉</a>
+            </div>
+          </div>
+          <div>
+            <h2>Carlos Ramírez</h2>
+            <p class="cargo">Especialista en espacios corporativos · 8 años de experiencia</p>
+            <p>Carlos diseña oficinas pensando en las personas que trabajan en ellas: buena luz, buena acústica y lugares para concentrarse y para convivir.</p>
+            <h4>Especialidades</h4>
+            <ul class="chips">
+              <li>Oficinas</li>
+              <li>Coworkings</li>
+              <li>Ergonomía</li>
+            </ul>
+            <h4>Estudios y certificaciones</h4>
+            <ul>
+              <li>Arquitectura, UNAM</li>
+              <li>Certificación WELL AP (espacios saludables)</li>
+            </ul>
+            <h4>Portafolio y reconocimientos</h4>
+            <ul>
+              <li>Proyectos destacados: <a href="proyectos.html#oficina">Oficina Corporativa</a> y <a href="proyectos.html#coworking">Coworking Roma</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="perfil" id="lucia">
+          <div class="perfil-foto">
+            <img src="img/disenadora-lucia.svg" alt="Foto de Lucía Fernández">
+            <div class="redes">
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="Pinterest">P</a>
+              <a href="mailto:lucia@interiordesignstudio.com" aria-label="Correo">✉</a>
+            </div>
+          </div>
+          <div>
+            <h2>Lucía Fernández</h2>
+            <p class="cargo">Diseñadora comercial · 6 años de experiencia</p>
+            <p>Lucía crea tiendas y restaurantes que la gente quiere fotografiar. Cuida que la marca de cada cliente se sienta en cada rincón.</p>
+            <h4>Especialidades</h4>
+            <ul class="chips">
+              <li>Restaurantes</li>
+              <li>Tiendas y boutiques</li>
+              <li>Estilo industrial</li>
+            </ul>
+            <h4>Estudios y certificaciones</h4>
+            <ul>
+              <li>Diseño de Interiores, Centro de Diseño, Cine y Televisión</li>
+              <li>Diplomado en Visual Merchandising</li>
+            </ul>
+            <h4>Portafolio y reconocimientos</h4>
+            <ul>
+              <li>Proyectos destacados: <a href="proyectos.html#restaurante">Restaurante Nórdico</a> y <a href="proyectos.html#boutique">Boutique Rosa</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="perfil" id="javier">
+          <div class="perfil-foto">
+            <img src="img/disenador-javier.svg" alt="Foto de Javier Torres">
+            <div class="redes">
+              <a href="#" aria-label="LinkedIn">in</a>
+              <a href="mailto:javier@interiordesignstudio.com" aria-label="Correo">✉</a>
+            </div>
+          </div>
+          <div>
+            <h2>Javier Torres</h2>
+            <p class="cargo">Director creativo · 12 años de experiencia</p>
+            <p>Fundador del estudio. Javier coordina a todo el equipo y se asegura de que cada proyecto mantenga la calidad y la identidad de Interior Design Studio.</p>
+            <h4>Especialidades</h4>
+            <ul class="chips">
+              <li>Dirección de proyectos</li>
+              <li>Diseño de mobiliario</li>
+              <li>Estilo contemporáneo</li>
+            </ul>
+            <h4>Estudios y certificaciones</h4>
+            <ul>
+              <li>Maestría en Diseño de Interiores, Istituto Europeo di Design (Milán)</li>
+              <li>Licenciatura en Diseño Industrial, UAM</li>
+            </ul>
+            <h4>Portafolio y reconocimientos</h4>
+            <ul>
+              <li>Proyecto destacado: <a href="proyectos.html#apartamento">Apartamento Reforma</a></li>
+              <li>Premio a la Trayectoria Joven en Diseño 2022</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-letras">ID</span>
+        <span class="logo-nombre">INTERIOR <small>DESIGN STUDIO</small></span>
+      </a>
+      <ul class="pie-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="estilos.html">Estilos</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="disenadores.html">Diseñadores</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="#">Aviso de privacidad</a></li>
+      </ul>
+      <div class="redes">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">P</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <p class="copy">© <span class="anio">2026</span> Interior Design Studio. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- El JavaScript va al final para que el HTML ya esté cargado -->
+  <script src="js/script.js"></script>
+</body>
+</html>
